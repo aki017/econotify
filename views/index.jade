@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Eco通知
+  ul(data-role="listview", data-split-icon="delete", data-split-theme="d")
+    if accounts
+      for account in accounts
+        li
+          a(href="/user/id?id=#{account.id}")
+            img(src="#{account.profile_image_url}")
+            h3= account.name
+            p= account.screen_name
+          a(href="/user/remove?id=#{account.id}", data-rel="dialog", data-transition="slideup") Remove
+    else
+      li
+        h3 NoAccounts

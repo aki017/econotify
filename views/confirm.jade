@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div(data-role="dialog", data-title="#{title}")
+    div(data-role="content")
+      h3= title
+      p= message
+      a(href="#{positive.url}", data-role="button", data-theme="b",)= positive.label
+      a(href="#{negative.url}", data-role="button", data-theme="c", data-rel="back")= negative.label
